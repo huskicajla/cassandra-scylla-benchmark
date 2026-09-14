@@ -1,0 +1,33 @@
+name: research-v3-cassandra-n1
+services:
+  node1:
+    image: cassandra:5.0.8
+    hostname: node1
+    labels:
+      research.owner: cassandra-scylla-v3
+    cpus: 2.0
+    mem_limit: 6g
+    environment:
+      CASSANDRA_CLUSTER_NAME: research-v3-cassandra-n1
+      CASSANDRA_SEEDS: node1
+      CASSANDRA_DC: datacenter1
+      CASSANDRA_RACK: rack1
+      CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch
+      CASSANDRA_NUM_TOKENS: 16
+      MAX_HEAP_SIZE: 2G
+    ports:
+      - "127.0.0.1:19042:9042"
+    volumes:
+      - node1-data:/var/lib/cassandra
+    networks:
+      research:
+        ipv4_address: 172.28.41.2
+networks:
+  research:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.41.0/24
+volumes:
+  node1-data:
+    name: research-v3-r2-cassandra-n1-node1-data

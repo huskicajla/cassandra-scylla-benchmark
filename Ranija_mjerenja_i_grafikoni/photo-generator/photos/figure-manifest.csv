@@ -1,0 +1,8 @@
+﻿figure,hypothesis,what_it_shows
+01_concurrent_write_throughput.png,H2,Prosječni throughput paralelnog upisa po veličini dataseta.
+02_concurrent_write_latency.png,H1,Prosječna i P95 latencija paralelnog upisa.
+03_single_read_performance.png,H1 i H2,Throughput i prosječna latencija READ_SINGLE testa.
+04_mixed_workload_ratio.png,H4,Omjer throughputa ScyllaDB/Cassandra u mixed workload profilima.
+05_resource_usage.png,Dopunska analiza,Prosječni zbirni Docker CPU i RAM validnih serija.
+06_h3_3node_performance.png,H3,Kontrolisani 3-node H3 profil s RF=1.
+07_h3_controlled_scalability.png,H3,Kontrolisano 1-node/3-node poređenje s istim RF=1.

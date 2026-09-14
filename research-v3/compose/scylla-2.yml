@@ -1,0 +1,45 @@
+name: research-v3-scylla-n2
+services:
+  node1:
+    image: scylladb/scylla:2026.2.2
+    hostname: node1
+    labels:
+      research.owner: cassandra-scylla-v3
+    cpus: 2.0
+    mem_limit: 6g
+    command: ["--smp", "2", "--memory", "4G", "--seeds", "node1", "--overprovisioned", "1"]
+    ports:
+      - "127.0.0.1:19042:9042"
+    volumes:
+      - node1-data:/var/lib/scylla
+    networks:
+      research:
+        ipv4_address: 172.28.52.2
+  node2:
+    image: scylladb/scylla:2026.2.2
+    hostname: node2
+    labels:
+      research.owner: cassandra-scylla-v3
+    cpus: 2.0
+    mem_limit: 6g
+    command: ["--smp", "2", "--memory", "4G", "--seeds", "node1", "--overprovisioned", "1"]
+    ports:
+      - "127.0.0.1:19043:9042"
+    volumes:
+      - node2-data:/var/lib/scylla
+    networks:
+      research:
+        ipv4_address: 172.28.52.3
+    depends_on:
+      - node1
+networks:
+  research:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.52.0/24
+volumes:
+  node1-data:
+    name: research-v3-r2-scylla-n2-node1-data
+  node2-data:
+    name: research-v3-r2-scylla-n2-node2-data

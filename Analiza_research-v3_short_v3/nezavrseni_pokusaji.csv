@@ -1,0 +1,4 @@
+﻿id,attempt,phase
+a_h1_h2-10m-n3-c1-concurrent_write-r3-scylla,C:\cassandra-scylla-benchmark\research-v3\results\short-v3\a_h1_h2-10m-n3-c1-concurrent_write-r3-scylla\attempt-20260910T015528208Z,BASELINE_RESTORE
+a_h1_h2-10m-n3-c8-read_single-r2-scylla,C:\cassandra-scylla-benchmark\research-v3\results\short-v3\a_h1_h2-10m-n3-c8-read_single-r2-scylla\attempt-20260910T140429602Z,BASELINE_SETUP
+a_h1_h2-10m-n3-c128-concurrent_write-r2-scylla,C:\cassandra-scylla-benchmark\research-v3\results\short-v3\a_h1_h2-10m-n3-c128-concurrent_write-r2-scylla\attempt-20260911T025109969Z,MEASUREMENT

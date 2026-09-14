@@ -1,0 +1,26 @@
+﻿DATABASE RESOURCE SUMMARY
+Experiment ID: EXP-20260823T113136Z-91c45ea8
+Database: cassandra
+Test series: PRELOADED_1M_CASSANDRA_1NODE_SCALABILITY_V2
+Experiment status: COMPLETED
+Experiment started (UTC): 2026-08-23T11:31:36.366895200Z
+Experiment finished (UTC): 2026-08-23T12:14:01.687650Z
+Resource samples: 40 snapshots / 40 container rows
+
+HOST (Windows laptop)
+Average CPU: 16.33 %
+Peak CPU: 67.00 %
+Average RAM used: 17,100.52 MB
+Peak RAM used: 17,224.76 MB
+
+DATABASE CONTAINERS (all active database nodes combined)
+Average CPU: 19.70 %
+Peak CPU: 230.54 %
+Average RAM used: 2,642.23 MB
+Peak RAM used: 2,660.35 MB
+
+PER-NODE DATABASE PROCESS USAGE
+cassandra-scale1-node1: average CPU 19.70 %; peak CPU 230.54 %; average RAM 2,642.23 MB; peak RAM 2,660.35 MB
+
+Raw network I/O and block I/O samples are preserved in ../resource-usage-v1.csv.
+Sampling interval: 60 seconds. CPU is Docker CPU percent; RAM is container resident memory reported by Docker.

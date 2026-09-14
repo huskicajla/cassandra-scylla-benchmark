@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: benchmark-app
+
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.cassandra.autoconfigure.CassandraAutoConfiguration
+
+server:
+  port: 8080
+
+database:
+  type: cassandra
+  host: localhost
+  port: 9042
+  keyspace: benchmark
+  local-datacenter: datacenter1
+
+dataset:
+  root: ../data-generator/output/telemetry-50m
+  size: 1000000
+  chunk-size: 1000000
+
+benchmark:
+  warmup-runs: 1
+  measurement-runs: 3
+  concurrency: 32
+  batch-size: 128

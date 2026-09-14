@@ -1,0 +1,85 @@
+name: research-v3-cassandra-n3
+services:
+  node1:
+    image: cassandra:5.0.8
+    hostname: node1
+    labels:
+      research.owner: cassandra-scylla-v3
+    cpus: 2.0
+    mem_limit: 6g
+    environment:
+      CASSANDRA_CLUSTER_NAME: research-v3-cassandra-n3
+      CASSANDRA_SEEDS: node1
+      CASSANDRA_DC: datacenter1
+      CASSANDRA_RACK: rack1
+      CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch
+      CASSANDRA_NUM_TOKENS: 16
+      MAX_HEAP_SIZE: 2G
+    ports:
+      - "127.0.0.1:19042:9042"
+    volumes:
+      - node1-data:/var/lib/cassandra
+    networks:
+      research:
+        ipv4_address: 172.28.43.2
+  node2:
+    image: cassandra:5.0.8
+    hostname: node2
+    labels:
+      research.owner: cassandra-scylla-v3
+    cpus: 2.0
+    mem_limit: 6g
+    environment:
+      CASSANDRA_CLUSTER_NAME: research-v3-cassandra-n3
+      CASSANDRA_SEEDS: node1
+      CASSANDRA_DC: datacenter1
+      CASSANDRA_RACK: rack1
+      CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch
+      CASSANDRA_NUM_TOKENS: 16
+      MAX_HEAP_SIZE: 2G
+    ports:
+      - "127.0.0.1:19043:9042"
+    volumes:
+      - node2-data:/var/lib/cassandra
+    networks:
+      research:
+        ipv4_address: 172.28.43.3
+    depends_on:
+      - node1
+  node3:
+    image: cassandra:5.0.8
+    hostname: node3
+    labels:
+      research.owner: cassandra-scylla-v3
+    cpus: 2.0
+    mem_limit: 6g
+    environment:
+      CASSANDRA_CLUSTER_NAME: research-v3-cassandra-n3
+      CASSANDRA_SEEDS: node1
+      CASSANDRA_DC: datacenter1
+      CASSANDRA_RACK: rack1
+      CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch
+      CASSANDRA_NUM_TOKENS: 16
+      MAX_HEAP_SIZE: 2G
+    ports:
+      - "127.0.0.1:19044:9042"
+    volumes:
+      - node3-data:/var/lib/cassandra
+    networks:
+      research:
+        ipv4_address: 172.28.43.4
+    depends_on:
+      - node1
+networks:
+  research:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.43.0/24
+volumes:
+  node1-data:
+    name: research-v3-r2-cassandra-n3-node1-data
+  node2-data:
+    name: research-v3-r2-cassandra-n3-node2-data
+  node3-data:
+    name: research-v3-r2-cassandra-n3-node3-data

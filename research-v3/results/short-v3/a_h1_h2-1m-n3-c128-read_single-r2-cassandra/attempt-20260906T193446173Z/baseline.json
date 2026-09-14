@@ -1,0 +1,7 @@
+{
+  "records" : 1000000,
+  "maxEventTime" : "2025-01-01T01:39:00Z",
+  "verifiedSampleReads" : 128,
+  "sampleHash" : "f55996df68fd2ba0d93bfa4870dc9092ebbe8e4272b03da2b6f2fc7472f2664d",
+  "sampleSize" : 100000
+}

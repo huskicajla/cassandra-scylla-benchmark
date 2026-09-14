@@ -1,0 +1,70 @@
+{
+    "plan":  "8EA86B0CB084D68748EA616A5806F05566EE1F544997E4DC2E279BB5D95309F6",
+    "jar":  "F7B53673A544D7F8BFD060CC50E5087D8B3814F56B9285679FB41FBE077BACFC",
+    "files":  [
+                  {
+                      "sha256":  "1DD09DC6BA62422610969848F4E6966AE6FFB0465544D5CE18EA6DE09F34D97C",
+                      "name":  "chunk-000.csv"
+                  },
+                  {
+                      "sha256":  "D03B956AD22A6D668D010904CDCCD67196D230DFD4D3062BFA1557DC871EAECC",
+                      "name":  "chunk-001.csv"
+                  },
+                  {
+                      "sha256":  "0EAA672FF94A0323C2FDB70CD76C755B1259307FA5B72700DB6431847BD3A7E8",
+                      "name":  "chunk-002.csv"
+                  },
+                  {
+                      "sha256":  "A55FCE66702DD2DE75A4D34F2DDA6ECDA0E42BDBDA0BAA478124406697F2162B",
+                      "name":  "chunk-003.csv"
+                  },
+                  {
+                      "sha256":  "B01C155A4D601A117B4F6C951407D8BF42B27F91E6D875CF3C50780DDE4A8D38",
+                      "name":  "chunk-004.csv"
+                  },
+                  {
+                      "sha256":  "5C7A4BF23EF77114B0A8FCCC75678D01CADA2768C7106708E775B4727A4D5DD9",
+                      "name":  "chunk-005.csv"
+                  },
+                  {
+                      "sha256":  "F8F5A29A58972F006F7E88BB5E209045372051C5467B3EFBE2344CCFF2F60A39",
+                      "name":  "chunk-006.csv"
+                  },
+                  {
+                      "sha256":  "54EB0C2F45E2BBC618D095872220B54850F16C56B7E864DBDA43CEC4201656C3",
+                      "name":  "chunk-007.csv"
+                  },
+                  {
+                      "sha256":  "EE09E258F9B03EE8A3AF98DBE09624B9FCD7D0BC3FA4DE0DBFE85AA9B6FC6CDE",
+                      "name":  "chunk-008.csv"
+                  },
+                  {
+                      "sha256":  "D66ECBB25B6617253D5CB550A9B4A05F12F41A845DE934796A441281E75701CE",
+                      "name":  "chunk-009.csv"
+                  },
+                  {
+                      "sha256":  "2B140A2BABCD362648E90E67C820ABDD56D2E8F97EA7CC17981CC0318995E3F6",
+                      "name":  "cassandra-1.yml"
+                  },
+                  {
+                      "sha256":  "780A4E4EFDAB8338824A2DCFCDB255F3E8B5EA6B8E0EDF2697EA0108638789C1",
+                      "name":  "cassandra-2.yml"
+                  },
+                  {
+                      "sha256":  "5BA4D5630856E11BBC3DC96FF1F3060557C8F32BC717480ACB066807EBE0C5B8",
+                      "name":  "cassandra-3.yml"
+                  },
+                  {
+                      "sha256":  "11374E2ADC426EE099C5DFA27FECF933B836F581F152BD34E15BBCEC70741EA4",
+                      "name":  "scylla-1.yml"
+                  },
+                  {
+                      "sha256":  "586C401BBA0EF3FC1D2184C3EB3D929BD578746011C1506FCF78CFF7F6A6EC12",
+                      "name":  "scylla-2.yml"
+                  },
+                  {
+                      "sha256":  "B563204F64ED60101EC676062064512DEA1EA12644F0980AF2DDD86219C96434",
+                      "name":  "scylla-3.yml"
+                  }
+              ]
+}

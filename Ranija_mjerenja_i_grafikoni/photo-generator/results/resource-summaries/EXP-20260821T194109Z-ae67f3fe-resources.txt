@@ -1,0 +1,28 @@
+﻿DATABASE RESOURCE SUMMARY
+Experiment ID: EXP-20260821T194109Z-ae67f3fe
+Database: scylla
+Test series: FINAL_1M_SCYLLA_OPTIMIZED_V2
+Experiment status: COMPLETED
+Experiment started (UTC): 2026-08-21T19:41:09.606723600Z
+Experiment finished (UTC): 2026-08-21T20:24:17.491040500Z
+Resource samples: 41 snapshots / 123 container rows
+
+HOST (Windows laptop)
+Average CPU: 84.49 %
+Peak CPU: 100.00 %
+Average RAM used: 27,249.29 MB
+Peak RAM used: 28,925.74 MB
+
+DATABASE CONTAINERS (all three database nodes combined)
+Average CPU: 345.99 %
+Peak CPU: 533.38 %
+Average RAM used: 10,948.78 MB
+Peak RAM used: 11,882.50 MB
+
+PER-NODE DATABASE PROCESS USAGE
+scylla-node1: average CPU 118.73 %; peak CPU 190.78 %; average RAM 3,643.34 MB; peak RAM 3,959.81 MB
+scylla-node2: average CPU 113.54 %; peak CPU 199.49 %; average RAM 3,652.83 MB; peak RAM 3,960.83 MB
+scylla-node3: average CPU 113.72 %; peak CPU 168.54 %; average RAM 3,652.61 MB; peak RAM 3,961.86 MB
+
+Raw network I/O and block I/O samples are preserved in ../resource-usage-v1.csv.
+Sampling interval: 60 seconds. CPU is Docker CPU percent; RAM is container resident memory reported by Docker.

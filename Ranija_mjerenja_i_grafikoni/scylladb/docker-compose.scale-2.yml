@@ -1,0 +1,44 @@
+services:
+  scylla-scale2-node1:
+    image: scylladb/scylla:2026.2.2
+    container_name: scylla-scale2-node1
+    hostname: scylla-scale2-node1
+    command: ["--smp", "2", "--memory", "4G", "--seeds", "scylla-scale2-node1", "--overprovisioned", "1"]
+    mem_limit: 6g
+    cpus: 2.0
+    ports:
+      - "9042:9042"
+    volumes:
+      - scylla-scale2-node1-data:/var/lib/scylla
+    networks:
+      scylla-scale2-net:
+        ipv4_address: 172.23.0.2
+
+  scylla-scale2-node2:
+    image: scylladb/scylla:2026.2.2
+    container_name: scylla-scale2-node2
+    hostname: scylla-scale2-node2
+    command: ["--smp", "2", "--memory", "4G", "--seeds", "scylla-scale2-node1", "--overprovisioned", "1"]
+    mem_limit: 6g
+    cpus: 2.0
+    ports:
+      - "9043:9042"
+    volumes:
+      - scylla-scale2-node2-data:/var/lib/scylla
+    networks:
+      scylla-scale2-net:
+        ipv4_address: 172.23.0.3
+    depends_on:
+      - scylla-scale2-node1
+
+networks:
+  scylla-scale2-net:
+    name: scylla-scale2-net
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.23.0.0/24
+
+volumes:
+  scylla-scale2-node1-data:
+  scylla-scale2-node2-data:

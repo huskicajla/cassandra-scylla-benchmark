@@ -1,0 +1,26 @@
+services:
+  scylla-scale1-node1:
+    image: scylladb/scylla:2026.2.2
+    container_name: scylla-scale1-node1
+    hostname: scylla-scale1-node1
+    command: ["--smp", "2", "--memory", "4G", "--seeds", "scylla-scale1-node1", "--overprovisioned", "1"]
+    mem_limit: 6g
+    cpus: 2.0
+    ports:
+      - "9042:9042"
+    volumes:
+      - scylla-scale1-node1-data:/var/lib/scylla
+    networks:
+      scylla-scale1-net:
+        ipv4_address: 172.21.0.2
+
+networks:
+  scylla-scale1-net:
+    name: scylla-scale1-net
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.21.0.0/24
+
+volumes:
+  scylla-scale1-node1-data:

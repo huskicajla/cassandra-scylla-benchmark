@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cassandra vs ScyllaDB — Benchmark Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<main>
+    <header>
+        <p class="eyebrow">RESEARCH EVIDENCE DASHBOARD</p>
+        <h1>Cassandra vs ScyllaDB</h1>
+        <p class="subtitle">Read-only view of saved benchmark CSV evidence.</p>
+    </header>
+
+    <section class="panel controls">
+        <label for="experiment-select">Experiment</label>
+        <select id="experiment-select" aria-label="Select experiment"></select>
+        <p id="experiment-context" class="context"></p>
+    </section>
+
+    <section id="cards" class="cards" aria-live="polite"></section>
+
+    <section class="panel">
+        <h2>Measurement summary</h2>
+        <p class="hint">Warm-up and data-preload rows are excluded. Each row is the average of recorded measurement runs.</p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                <tr>
+                    <th>Operation</th><th>Profile</th><th>Runs</th><th>Throughput (ops/s)</th>
+                    <th>Avg latency (ms)</th><th>P95 (ms)</th><th>P99 (ms)</th><th>Failed</th>
+                </tr>
+                </thead>
+                <tbody id="summary-body"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="grid">
+        <section class="panel">
+            <h2>Lifecycle audit</h2>
+            <ul id="audit-list" class="audit-list"></ul>
+        </section>
+        <section class="panel">
+            <h2>Operation failures</h2>
+            <div id="failure-state" class="empty">Loading…</div>
+        </section>
+    </section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>

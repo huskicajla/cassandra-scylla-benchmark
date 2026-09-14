@@ -1,0 +1,33 @@
+services:
+  cassandra-scale1-node1:
+    image: cassandra:5.0.8
+    container_name: cassandra-scale1-node1
+    hostname: cassandra-scale1-node1
+    environment:
+      CASSANDRA_CLUSTER_NAME: cassandra-scale1
+      CASSANDRA_SEEDS: cassandra-scale1-node1
+      CASSANDRA_DC: datacenter1
+      CASSANDRA_RACK: rack1
+      CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch
+      CASSANDRA_NUM_TOKENS: 16
+      MAX_HEAP_SIZE: 2G
+    ports:
+      - "9042:9042"
+    mem_limit: 6g
+    cpus: 2.0
+    volumes:
+      - cassandra-scale1-node1-data:/var/lib/cassandra
+    networks:
+      cassandra-scale1-net:
+        ipv4_address: 172.22.0.2
+
+networks:
+  cassandra-scale1-net:
+    name: cassandra-scale1-net
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.22.0.0/24
+
+volumes:
+  cassandra-scale1-node1-data:

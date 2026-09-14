@@ -1,0 +1,98 @@
+services:
+
+  cassandra-node1:
+    image: cassandra:5.0.8
+    container_name: cassandra-node1
+    hostname: cassandra-node1
+
+    environment:
+      CASSANDRA_CLUSTER_NAME: benchmark-cluster
+      CASSANDRA_SEEDS: cassandra-node1
+      CASSANDRA_DC: datacenter1
+      CASSANDRA_RACK: rack1
+      CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch
+      CASSANDRA_NUM_TOKENS: 16
+      MAX_HEAP_SIZE: 2G
+
+    ports:
+      - "9042:9042"
+
+    mem_limit: 6g
+    cpus: 2.0
+
+    volumes:
+      - cassandra-node1-data:/var/lib/cassandra
+
+    networks:
+      - cassandra-net
+
+
+  cassandra-node2:
+    image: cassandra:5.0.8
+    container_name: cassandra-node2
+    hostname: cassandra-node2
+
+    environment:
+      CASSANDRA_CLUSTER_NAME: benchmark-cluster
+      CASSANDRA_SEEDS: cassandra-node1
+      CASSANDRA_DC: datacenter1
+      CASSANDRA_RACK: rack1
+      CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch
+      CASSANDRA_NUM_TOKENS: 16
+      MAX_HEAP_SIZE: 2G
+
+    ports:
+      - "9043:9042"
+
+    mem_limit: 6g
+    cpus: 2.0
+
+    volumes:
+      - cassandra-node2-data:/var/lib/cassandra
+
+    networks:
+      - cassandra-net
+
+    depends_on:
+      - cassandra-node1
+
+
+  cassandra-node3:
+    image: cassandra:5.0.8
+    container_name: cassandra-node3
+    hostname: cassandra-node3
+
+    environment:
+      CASSANDRA_CLUSTER_NAME: benchmark-cluster
+      CASSANDRA_SEEDS: cassandra-node1
+      CASSANDRA_DC: datacenter1
+      CASSANDRA_RACK: rack1
+      CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch
+      CASSANDRA_NUM_TOKENS: 16
+      MAX_HEAP_SIZE: 2G
+
+    ports:
+      - "9044:9042"
+
+    mem_limit: 6g
+    cpus: 2.0
+
+    volumes:
+      - cassandra-node3-data:/var/lib/cassandra
+
+    networks:
+      - cassandra-net
+
+    depends_on:
+      - cassandra-node1
+
+
+networks:
+  cassandra-net:
+    driver: bridge
+
+
+volumes:
+  cassandra-node1-data:
+  cassandra-node2-data:
+  cassandra-node3-data:

@@ -1,0 +1,4 @@
+{
+  "error" : "java.util.concurrent.ExecutionException: java.lang.IllegalStateException: maxOperations reached before protocol completed",
+  "at" : "2026-09-11T04:08:32.471112700Z"
+}
